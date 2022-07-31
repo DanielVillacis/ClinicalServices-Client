@@ -2,6 +2,7 @@ import axios from 'axios';
 import React from 'react';
 import {toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import {Link} from 'react-router-dom';
 
 toast.configure();
  
@@ -25,11 +26,12 @@ class AddPatient extends React.Component {
         return (<div>
             <h2>Add a new Patient</h2>
             <form>
-                First name: <input type="text" name="firstName" onChange={(event=>this.firstName=event.target.value)}/><br/>
-                Last name: <input type="text" name="lastName" onChange={(event=>this.lastName=event.target.value)}/><br/>
-                Age: <input type="text" name="age" onChange={(event=>this.age=event.target.value)}/><br/>
+                First name: <input type="text" name="firstName" onChange={(event=>this.firstName=event.target.value)}/>
+                Last name: <input type="text" name="lastName" onChange={(event=>this.lastName=event.target.value)}/>
+                Age: <input type="text" name="age" onChange={(event=>this.age=event.target.value)}/>
                 <button onClick={this.handleSubmit.bind(this)}>Confirm</button><br/>
-            </form>
+            </form><br/>
+            <Link to={'/'}>Homepage</Link>
         </div>)
     }
 }
